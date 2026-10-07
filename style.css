@@ -5,7 +5,6 @@
 /*Pseudo-elements*/
 *::before,
 *::after {
-    /* BOXING Margins: Avoid layout overflow and distortion */
     box-sizing: border-box;
 }
 
@@ -17,8 +16,7 @@ body {
     color: #333333;
     line-height: 1.6;
 
-    /*Layered Gradients over Centered Background Image*/
-    /* 双层渐变覆盖与居中背景图 */
+        /* styling visual effects*/
     background-image:
         linear-gradient(rgba(20, 20, 20, 0.88), rgba(30, 20, 15, 0.92)),
         url('car3.jpg');
@@ -36,22 +34,27 @@ header {
     padding: 25px 15px;
     background-color: rgba(255, 255, 255, 0.95);
     border-bottom: 3px solid #d2691e;
+
 }
 
-/* Descendant Selector: Define heading style */
 header h1 {
     margin: 0 0 10px 0;
     color: #d2691e;
     font-size: 40px;
     letter-spacing: 1px;
+
+         /* Use the Google Fonts website to modify the font used on your pages*/
+    font-family: "Isometra", serif;
 }
 
 nav {
-    /* display: inline-block */
     /*块级元素 包裹内边距双值*/
+         /*make navigationbar horizontal box*/
     display: inline-block;
     padding: 8px 20px;
     background: #222222;
+
+          /*box shadow styling techniques*/
     border-radius: 20px;
 }
 
@@ -61,11 +64,15 @@ nav a[href$=".html"] {
     text-decoration: none;
     font-weight: bold;
     padding: 6px 14px;
+    /**/
     display: inline;
     /* 为了用属性选择器所以这么些inline*/
     transition: color 0.3s, background-color 0.3s;
 }
 
+
+
+              /*hover styling techniques*/
 /* Pseudo Hover interaction 悬停*/
 nav a:hover {
     color: #d2691e;
@@ -85,11 +92,12 @@ main {
     /* Overflow handling */
 }
 
-/* Child Selector: Direct children */
+/* Direct children */
 section>h2 {
     color: #d2691e;
     font-size: 26px;
     padding-left: 12px;
+                /*css box model*/
     margin-top: 10px;
     margin-bottom: 15px;
     border-left: 6px solid #d2691e;
@@ -97,10 +105,10 @@ section>h2 {
     padding-bottom: 5px;
 }
 
-/* Adjacent Sibling Combinator: Immediately following sibling */
+/*xiongdixianglingxuanzeqi*/
 h2+p {
     font-style: italic;
-    color: #555555;
+    color: #ffc935;
     margin-bottom: 20px;
 }
 
@@ -108,6 +116,7 @@ h2+p {
    4. Card container
    ========================================================================== */
 /* General Content Card */
+                               /*box styling techniques*//*css box model*/
 .content-box,
 /*并集选择器 逗号是或者*/
 section {
@@ -124,7 +133,7 @@ section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/*                      Target all images with alt attributes */
+/*shuxingxuanzeqi ba alt quabuxuanzhong *//*add boderradius*/
 img[alt] {
     display: block;
     width: 100%;
