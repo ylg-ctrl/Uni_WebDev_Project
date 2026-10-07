@@ -1,0 +1,172 @@
+/* ==========================================================================
+   1. Box model
+   ========================================================================== */
+*,
+/*Pseudo-elements*/
+*::before,
+*::after {
+    /* BOXING Margins: Avoid layout overflow and distortion */
+    box-sizing: border-box;
+}
+
+body {
+    /* Reset default margins */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+
+    /*Layered Gradients over Centered Background Image*/
+    /* 双层渐变覆盖与居中背景图 */
+    background-image:
+        linear-gradient(rgba(20, 20, 20, 0.88), rgba(30, 20, 15, 0.92)),
+        url('car3.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ==========================================================================
+   2. Header and Navigation Bar (后代选择器、伪类、多值外边距)
+   ========================================================================== */
+header {
+    text-align: center;
+    padding: 25px 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 3px solid #d2691e;
+}
+
+/* Descendant Selector: Define heading style */
+header h1 {
+    margin: 0 0 10px 0;
+    color: #d2691e;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+nav {
+    /* display: inline-block */
+    /*块级元素 包裹内边距双值*/
+    display: inline-block;
+    padding: 8px 20px;
+    background: #222222;
+    border-radius: 20px;
+}
+
+/* control end in html 故意用属性选择器*/
+nav a[href$=".html"] {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 14px;
+    display: inline;
+    /* 为了用属性选择器所以这么些inline*/
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* Pseudo Hover interaction 悬停*/
+nav a:hover {
+    color: #d2691e;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   3. Main Content Container & Headings
+   ========================================================================== */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    /* Center with margin */
+    overflow: hidden;
+    /* Overflow handling */
+}
+
+/* Child Selector: Direct children */
+section>h2 {
+    color: #d2691e;
+    font-size: 26px;
+    padding-left: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-left: 6px solid #d2691e;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+/* Adjacent Sibling Combinator: Immediately following sibling */
+h2+p {
+    font-style: italic;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   4. Card container
+   ========================================================================== */
+/* General Content Card */
+.content-box,
+/*并集选择器 逗号是或者*/
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    /*内边*/
+    margin: 20px 0;
+    /*外*/
+
+    border: 1px solid #e0e0e0;
+    /* 单一属性简写  */
+    border-radius: 12px;
+    /* 圆角 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*                      Target all images with alt attributes */
+img[alt] {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+}
+
+/* Image Caption 图注 */
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+/* Image Caption 图注 */
+figcaption,
+figure p {
+    font-size: 0.85em;
+    color: #777777;
+    margin-top: 5px;
+}
+
+
+/* ==========================================================================
+
+   ========================================================================== */
+/* ==========================================================================
+   6.Footer Design (Integrating the bottom buffer/divider from style.css)
+   ========================================================================== */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #aaaaaa;
+    border-top: 3px solid #d2691e;
+    /* style.css 特征 */
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
