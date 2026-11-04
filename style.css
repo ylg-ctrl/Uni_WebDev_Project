@@ -1,79 +1,64 @@
 /* ==========================================================================
-   1. Box model
+   1. Global Styles & Box Model (Task 2)
    ========================================================================== */
 *,
-/*Pseudo-elements*/
 *::before,
 *::after {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding and border*/
 }
 
 body {
-    /* Reset default margins */
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    color: #333333;
+    color: #e5b31f;
     line-height: 1.6;
 
-        /* styling visual effects*/
-    background-image:
+    /* Background Image and properties */
+    background-image: 
         linear-gradient(rgba(20, 20, 20, 0.88), rgba(30, 20, 15, 0.92)),
         url('car3.jpg');
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center;     /* Center the background image */
+    background-size: cover;          /* Cover the full screen */
+    background-repeat: no-repeat;    /* Do not repeat the image */
+    background-attachment: fixed;    /* Fix background when scrolling */
 }
 
 /* ==========================================================================
-   2. Header and Navigation Bar (后代选择器、伪类、多值外边距)
+   2. Header and Navigation 
    ========================================================================== */
 header {
     text-align: center;
     padding: 25px 15px;
     background-color: rgba(255, 255, 255, 0.95);
-    border-bottom: 3px solid #d2691e;
-
+    border-bottom: 3px solid #d2691e; /* Box model border */
 }
 
 header h1 {
     margin: 0 0 10px 0;
     color: #d2691e;
     font-size: 40px;
-    letter-spacing: 1px;
-
-         /* Use the Google Fonts website to modify the font used on your pages*/
     font-family: "Isometra", serif;
 }
 
 nav {
-    /*块级元素 包裹内边距双值*/
-         /*make navigationbar horizontal box*/
     display: inline-block;
-    padding: 8px 20px;
+    padding: 8px 20px;          /* Box model padding */
     background: #222222;
-
-          /*box shadow styling techniques*/
     border-radius: 20px;
 }
 
-/* control end in html 故意用属性选择器*/
+/* Attribute selector */
 nav a[href$=".html"] {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     padding: 6px 14px;
-    /**/
-    display: inline;
-    /* 为了用属性选择器所以这么些inline*/
+    display: inline-block;
     transition: color 0.3s, background-color 0.3s;
 }
 
-
-
-              /*hover styling techniques*/
-/* Pseudo Hover interaction 悬停*/
+/*  Pseudo-class selector (Hover effect) */
 nav a:hover {
     color: #d2691e;
     background-color: rgba(255, 255, 255, 0.1);
@@ -81,98 +66,70 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   3. Main Content Container & Headings
+   3. Main Content & Headings
    ========================================================================== */
 main {
-    width: 90%;
+    width: 90%;                 /* Box model width */
     max-width: 1000px;
-    margin: 30px auto;
-    /* Center with margin */
-    overflow: hidden;
-    /* Overflow handling */
+    margin: 30px auto;          /*  Box model margin */
 }
 
-/* Direct children */
-section>h2 {
+/* Child selector */
+section > h2 {
     color: #d2691e;
     font-size: 26px;
-    padding-left: 12px;
-                /*css box model*/
     margin-top: 10px;
     margin-bottom: 15px;
-    border-left: 6px solid #d2691e;
+    padding-left: 12px;         /* Box model padding */
+    border-left: 6px solid #d2691e; /*  Box model border */
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 5px;
 }
 
-/*xiongdixianglingxuanzeqi*/
-h2+p {
-    font-style: italic;
-    color: #ffc935;
-    margin-bottom: 20px;
-}
-
 /* ==========================================================================
-   4. Card container
+   4. Cards and Images (Task 2)
    ========================================================================== */
-/* General Content Card */
-                               /*box styling techniques*//*css box model*/
-.content-box,
-/*并集选择器 逗号是或者*/
 section {
     background-color: #ffffff;
-    padding: 25px;
-    /*内边*/
-    margin: 20px 0;
-    /*外*/
-
-    border: 1px solid #e0e0e0;
-    /* 单一属性简写  */
+    padding: 25px;              /*Boxpadding */
+    margin: 20px 0;             /* Boxmargin */
+    border: 1px solid #e0e0e0;  /*Boxborder */
     border-radius: 12px;
-    /* 圆角 */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/*shuxingxuanzeqi ba alt quabuxuanzhong *//*add boderradius*/
+/*Attribute selector for images */
 img[alt] {
     display: block;
-    width: 100%;
+    width: 100%;                /*Boxwidth */
     max-width: 650px;
-    height: auto;
-    margin: 15px auto;
+    height: auto;               /*Boxheight */
+    margin: 15px auto;          /*boxmargin*/
     border-radius: 8px;
-    border: 1px solid #cccccc;
+    border: 1px solid #cccccc;  /*Boxborder */
 }
 
-/* Image Caption 图注 */
 figure {
     margin: 0;
     text-align: center;
 }
 
-/* Image Caption 图注 */
-figcaption,
 figure p {
     font-size: 0.85em;
     color: #777777;
     margin-top: 5px;
 }
 
-
 /* ==========================================================================
-
-   ========================================================================== */
-/* ==========================================================================
-   6.Footer Design (Integrating the bottom buffer/divider from style.css)
+   5. Footer
    ========================================================================== */
 footer {
     margin-top: 40px;
-    padding: 20px;
+    padding: 20px;              /*Box model padding */
     text-align: center;
     background-color: #1a1a1a;
     color: #aaaaaa;
-    border-top: 3px solid #d2691e;
-    /* style.css 特征 */
+    border-top: 3px solid #d2691e; /*Box model border */
     font-size: 0.9em;
 }
 
